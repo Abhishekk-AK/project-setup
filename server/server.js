@@ -4,11 +4,12 @@ dotenv.config();
 const allowedOrigins = [
   process.env.FRONTEND_URL,
   process.env.LOCALHOST_URL,
+  "https://project-setup-pi.vercel.app",
+  "http://localhost:5173"
 ].filter(Boolean)
 
 const express = require('express');
 const cors = require('cors');
-const cookieParser = require('cookie-parser');
 const database = require('./config/database');
 
 const userRoutes = require('./routes/User');
@@ -24,7 +25,6 @@ app.use(
 );
 
 app.use(express.json());
-app.use(cookieParser());
 
 database.connect();
 
