@@ -2,10 +2,10 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 const allowedOrigins = [
-  process.env.FRONTEND_URL,
-  process.env.LOCALHOST_URL,
-  "https://project-setup-pi.vercel.app",
-  "http://localhost:5173"
+  FRONTEND_URL = process.env.FRONTEND_URL,
+  LOCALHOST_URL = process.env.LOCALHOST_URL,
+//   "https://project-setup-pi.vercel.app",
+//   "http://localhost:5173"
 ].filter(Boolean)
 
 const express = require('express');
@@ -23,7 +23,7 @@ app.use(
     credentials: true
   })
 );
-
+console.log(allowedOrigins)
 app.use(express.json());
 
 database.connect();
