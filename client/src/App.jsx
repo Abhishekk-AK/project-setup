@@ -6,7 +6,7 @@ import AllUsersPage from "./Components/user/AllUsers"
 function App() {
 
   return (
-    <div className="h-screen w-screen bg-gray-700">
+    <div className="min-h-screen max-w-screen overflow-hidden bg-gray-700">
       <Routes>
         <Route path="/" element={<HomePage/>}/>
         <Route path="/add-user" element={<AddUserPage/>} />

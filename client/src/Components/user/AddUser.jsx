@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { createUser } from '../../services/operations/userApi';
 
 const AddUserPage = () => {
@@ -18,13 +18,13 @@ const AddUserPage = () => {
     e.preventDefault();
     console.log('User Data:', formData);
     createUser(formData)
-    // You can add logic to save the user to Redux/localStorage/API
+
     setFormData({ firstName: '', lastName: '', email: '', age: '' }); // Clear form
     console.log(formData)
   };
 console.log(formData)
   return (
-    <div className="max-w-md mx-auto pt-20 p-6 bg-white rounded shadow-md">
+    <div className="max-w-md mx-auto my-20 p-6 bg-gray-100 rounded shadow-md">
       <h1 className="text-3xl font-bold text-center mb-6">Add User</h1>
 
       <form onSubmit={handleSubmit} className="space-y-4">

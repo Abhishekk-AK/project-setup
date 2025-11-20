@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { getAllUsers } from '../../services/operations/userApi';
-import { all } from 'axios';
 
 const AllUsersPage = () => {
   const [users, setUsers] = useState([]);
@@ -15,7 +14,7 @@ const AllUsersPage = () => {
   }, []);
 
   return (
-    <div className="max-w-4xl mx-auto pt-20 p-6 bg-white rounded shadow-md">
+    <div className="max-w-4xl mx-auto my-10 pt-5 p-6 bg-gray-100 rounded shadow-md">
       <h1 className="text-3xl font-bold text-center mb-6">Users Library</h1>
 
       {users.length === 0 ? (

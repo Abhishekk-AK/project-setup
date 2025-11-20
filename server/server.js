@@ -4,8 +4,6 @@ dotenv.config();
 const allowedOrigins = [
     process.env.FRONTEND_URL,
     process.env.LOCALHOST_URL,
-//   "https://project-setup-pi.vercel.app",
-//   "http://localhost:5173"
 ].filter(Boolean)
 
 const express = require('express');
@@ -16,7 +14,7 @@ const userRoutes = require('./routes/User');
 
 const app = express();
 const PORT = process.env.PORT || 4000;
-console.log('allowedOrigins ::', allowedOrigins)
+
 app.use(
   cors({
     origin: allowedOrigins,
