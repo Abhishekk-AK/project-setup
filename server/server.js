@@ -2,8 +2,8 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 const allowedOrigins = [
-  FRONTEND_URL = process.env.FRONTEND_URL,
-  LOCALHOST_URL = process.env.LOCALHOST_URL,
+    process.env.FRONTEND_URL,
+    process.env.LOCALHOST_URL,
 //   "https://project-setup-pi.vercel.app",
 //   "http://localhost:5173"
 ].filter(Boolean)
