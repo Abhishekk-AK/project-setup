@@ -4,6 +4,8 @@ dotenv.config();
 const allowedOrigins = [
   process.env.FRONTEND_URL,
   process.env.LOCALHOST_URL,
+  "https://project-setup-pi.vercel.app",
+  "http://localhost:5173"
 ].filter(Boolean)
 
 const express = require('express');
@@ -16,26 +18,27 @@ const userRoutes = require('./routes/User');
 const app = express();
 const PORT = process.env.PORT || 4000;
 
+app.use(
+  cors({
+    origin: allowedOrigins,
+    credentials: true
+  })
+);
+
 app.use(express.json());
 app.use(cookieParser());
-app.use(
-    cors({
-        origin:allowedOrigins,
-        credentials:true
-    })
-)
 
 database.connect();
 
 app.use('/api/v1/user', userRoutes);
 
 app.get('/', (req, res) => {
-    return res.json({
-        success:true,
-        message:'Your server is up and running.'
-    })
-})
+  return res.json({
+    success: true,
+    message: 'Your server is up and running.'
+  });
+});
 
 app.listen(PORT, () => {
-    console.log(`Server is running at port ${PORT}`);
-})
+  console.log(`Server is running at port ${PORT}`);
+});
